@@ -20,20 +20,13 @@ public class EuroCoinCollectionTest {
         collection = new EuroCoinCollection();
         
         // THIS COINS MUST BE PROPERLY CREATED IN ORDER TO THE TEST TO WORK CORRECTLY
-        //e1_sp1 = null;
-        //e1_sp2 = null;
-        //e2_sp_2002  = null;
-        //e2_sp_2005  = null;
-        //c50_it = null;
-        //c20_fr = null;
-        //c1_pt = null;
-        e1_sp1 = new EuroCoin(EuroCoin.Valor.E1, "Juan Carlos I",EuroCoin.Pais.ES, EuroCoin.Color.ORO_PLATA, 2019);
-        e1_sp2 = new EuroCoin(EuroCoin.Valor.E1, "Felipe VI",EuroCoin.Pais.ES, EuroCoin.Color.ORO_PLATA, 2019);
-        e2_sp_2002  = new EuroCoin(EuroCoin.Valor.E2, "Juan Carlos I",EuroCoin.Pais.ES, EuroCoin.Color.ORO_PLATA, 2002);
-        e2_sp_2005  = new EuroCoin(EuroCoin.Valor.E2, "Juan Carlos I",EuroCoin.Pais.ES, EuroCoin.Color.ORO_PLATA, 2005);
-        c50_it = new EuroCoin(EuroCoin.Valor.C50, " ",EuroCoin.Pais.IT, EuroCoin.Color.ORO_PLATA,2005);
-        c20_fr = new EuroCoin(EuroCoin.Valor.C20, " ",EuroCoin.Pais.FR, EuroCoin.Color.ORO_PLATA,2005);
-        c1_pt = new EuroCoin(EuroCoin.Valor.C1, " ",EuroCoin.Pais.PT, EuroCoin.Color.BRONCE,2005);
+        e1_sp1 = new EuroCoin(EuroCoin.Valor.E1, "Juan Carlos I", EuroCoin.Pais.ES, EuroCoin.Color.ORO_PLATA, 2019);
+        e1_sp2 = new EuroCoin(EuroCoin.Valor.E1, "Felipe VI", EuroCoin.Pais.ES, EuroCoin.Color.ORO_PLATA, 2019);
+        e2_sp_2002  = new EuroCoin(EuroCoin.Valor.E2, "Juan Carlos I", EuroCoin.Pais.ES, EuroCoin.Color.ORO_PLATA, 2002);
+        e2_sp_2005  = new EuroCoin(EuroCoin.Valor.E2, "Juan Carlos I", EuroCoin.Pais.ES, EuroCoin.Color.ORO_PLATA, 2005);
+        c50_it = new EuroCoin(EuroCoin.Valor.C50, " ", EuroCoin.Pais.IT, EuroCoin.Color.ORO, 2005);
+        c20_fr = new EuroCoin(EuroCoin.Valor.C20, " ", EuroCoin.Pais.FR, EuroCoin.Color.ORO, 2005);
+        c1_pt = new EuroCoin(EuroCoin.Valor.C1, " ", EuroCoin.Pais.PT, EuroCoin.Color.BRONCE, 2005);
        
         assertTrue(collection.insertCoin(e1_sp1));
         assertTrue(collection.insertCoin(e1_sp2));
