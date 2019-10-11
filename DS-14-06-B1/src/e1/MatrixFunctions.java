@@ -3,6 +3,7 @@ package e1;
 import java.util.*;
 
 public class MatrixFunctions {
+        // Returns the maximun value of a matrix
 	public static int max(int[][] a) {
 		int mayor = a[0][0];
 		for (int i = 0; i < a.length; i++) {
@@ -15,6 +16,7 @@ public class MatrixFunctions {
 		return mayor;
 	}
 
+        // Returns the sum of the values of a given row
 	public static int rowSum(int[][] a, int row) {
 		int sum = 0;
 		for (int i = 0; i < a[row].length; i++) {
@@ -23,6 +25,7 @@ public class MatrixFunctions {
 		return sum;
 	}
 
+        // Returns the sum of the values of a given column
 	public static int columnSum(int[][] a, int colum) {
 		int sum = 0;
 		for (int i = 0; i < a.length; i++) {
@@ -33,6 +36,7 @@ public class MatrixFunctions {
 		return sum;
 	}
 
+        // Sums the value of each row and returns the results in an array .
 	public static int[] allRowSums(int[][] a) {
 		int[] rowSum = new int[a.length];
 		for (int i = 0; i < a.length; i++) {
@@ -44,6 +48,9 @@ public class MatrixFunctions {
 		return rowSum;
 	}
 
+        // Sums the value of each column and returns the results in an array .
+        // If a position does not exist because the array is " ragged " that position
+        // is considered a zero value .
 	public static int[] allColumnSums(int[][] a) {
 		int numColumnas = 0;
 		for (int i = 0; i < a.length; i++) {
@@ -58,6 +65,8 @@ public class MatrixFunctions {
 		return columnSum;
 	}
 
+        // Checks if an array is "row - magic ", that is , if all its rows have the same
+        // sum of all its values .
 	public static boolean isRowMagic(int[][] a) {
 		int[] sum;
 		sum = allRowSums(a);
@@ -69,6 +78,8 @@ public class MatrixFunctions {
 		return true;
 	}
 
+        // Checks if an array is " column - magic ", that is , if all its columns have
+        // the same sum of all its values .
 	public static boolean isColumnMagic(int[][] a) {
 		int[] sum;
 		sum = allColumnSums(a);
@@ -80,6 +91,8 @@ public class MatrixFunctions {
 		return true;
 	}
 
+        // Checks that a matrix is square , that is , it has the same number of rows
+        // as columns and all rows have the same length .
 	public static boolean isSquare(int[][] a) {
 		for (int i = 0; i < a.length; i++) {
 			if (a.length != a[i].length) {
@@ -89,6 +102,10 @@ public class MatrixFunctions {
 		return true;
 	}
 
+        // Check if the matrix is a magic square . A matrix is magic square if it is
+        // square , all the rows add up to the same , all the columns add up to the
+        // same and the two main diagonals add up to the same . Also all these sums
+        // are the same .
 	public static boolean isMagic(int[][] a) {
 		boolean resultado = false;
 		int d1 = 0;
@@ -113,6 +130,9 @@ public class MatrixFunctions {
 		return resultado;
 	}
 
+        // Checks if the given matrix forms a sequence , that is , it is square
+        // (of order n) and contains all the digits from 1 to n * n, regardless of
+        // their order .
 	public static boolean isSequence(int[][] a) {
 		if (isSquare(a)) {
 			int rowSum[];
