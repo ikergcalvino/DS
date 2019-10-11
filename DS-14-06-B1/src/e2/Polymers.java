@@ -1,8 +1,8 @@
 package e2;
 
 /**
-* Class for handling polymers represented by Strings
-*/
+ * Class for handling polymers represented by Strings
+ */
 public class Polymers {
 
         /**
