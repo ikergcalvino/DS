@@ -1,7 +1,19 @@
 package e2;
 
+/**
+* Class for handling polymers represented by Strings
+*/
 public class Polymers {
 
+        /**
+         * Given a polymer represented with the letters of the alphabet ( uppercase
+         * and lowercase excluding ~N), it processes the chain reactions of said
+         * polymer ( due to adjoint units of the same type but different polarity ,
+         * for example : aA ).
+         * It returns the polymer without the reactive pairs (it can be an empty
+         * string ) and it throws an IllegalArgumentException if the String passed
+         * as parameter is null .
+         */
 	public static String processPolymer(String polymer) {
 		StringBuilder poly = new StringBuilder();
 		poly.append(polymer);
@@ -19,6 +31,15 @@ public class Polymers {
 		return poly.toString();
 	}
 
+        /**
+         * Given a polymer returns the monomer ( existing in the polymer ) whose
+         * elimination ( both in its positive and negative form ) results , after the
+         * consequent chain reactions , in the smallest polymer .
+         * It returns the positive form ( lowercase ) of the monomer . In case of a
+         * tie , the one with the lowest alphabetical order is returned .
+         * An IllegalArgumentException is thrown if the original polymer is null or
+         * if it is a empty string .
+         */
 	public static char minProcessedPolymer(String polymer) {
 		char minmono = 'a';
 		String cpoly = polymer;
