@@ -53,7 +53,38 @@ public class EuroCoinCollection implements Iterable<EuroCoin>{
         
         @Override
         public Iterator<EuroCoin> iterator() {
-            return null;
+            return new iterador();
+        }
+        
+        private class iterador implements Iterator{
+            
+            private int num = 0;
+            private boolean deleteable = false;
+            
+            @Override
+            public boolean hasNext() {
+                return !(coinCollection.size() == 1);
+            }
+            
+            @Override
+            public Object next() {
+                deleteable = true;
+                if (num == (coinCollection.size() - 1)) {
+                    num = 0;
+                }
+                return coinCollection.get(num);
+            }
+            
+            @Override
+            public void remove() {
+                if (deleteable) {
+                    coinCollection.remove(num);
+                    deleteable = false;
+                    if (num == coinCollection.size()) { num = 0; }
+                } else {
+                    throw new IllegalStateException("No es posible eliminar");
+                }
+            }
             
         }
 }
