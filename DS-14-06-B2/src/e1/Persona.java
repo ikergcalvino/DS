@@ -35,8 +35,7 @@ public class Persona {
 			valor += Character.getNumericValue(dni.toCharArray()[i]);
 			valor *= 10;
 		}
-		valor /= 10;
-                
+		valor /= 10;                
 		if (dni.length() == 9 && dni.contains(Integer.toString(valor))) {
 			if (letras[valor % 23] == dni.toCharArray()[8]) {
 				valido = true;

@@ -11,5 +11,5 @@ public class Comparador implements Comparator<EuroCoin>{
             if (x == 0) { return coin1.getDiseno().compareTo(coin2.getDiseno()); }
         } return x;
     }
-    
+
 }

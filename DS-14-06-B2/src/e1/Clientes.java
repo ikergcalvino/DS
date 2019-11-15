@@ -5,10 +5,6 @@ public class Clientes extends Persona { //hereda los atributos de persona
 	public int num_compras;
 	public float descuento;
 
-	//    public Clientes(){
-	//        super();
-	//    }
-
 	public Clientes(String nombre, String apellidos, String dni, String direccion, String telefono, String codigo, int compras) {
 		super(nombre, apellidos, dni, direccion, telefono); //para añadir alconstructor los atributos  de persona
 		cod_cliente = codigo;
