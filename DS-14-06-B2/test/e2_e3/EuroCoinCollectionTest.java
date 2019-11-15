@@ -72,14 +72,14 @@ public class EuroCoinCollectionTest {
         assertEquals(220, collection.value());
     }
     
-//    @Test
-//    public void testGetters(){
-//        assertEquals();
-//        assertEquals();
-//        assertEquals();
-//        assertEquals();
-//        assertEquals();
-//    }
+    @Test
+    public void testGetters(){
+        assertEquals(EuroCoin.Color.ORO_PLATA, e1_sp1.getColor());
+        assertEquals("Felipe VI", e1_sp2.getDiseno());
+        assertEquals(EuroCoin.Pais.ES, e2_sp_2002.getPais());
+        assertEquals(EuroCoin.Valor.E2, e2_sp_2005.getValue());
+        assertEquals(2005, c20_fr.año);
+    }
     
     @Test
     public void testHashCode(){
