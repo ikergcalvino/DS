@@ -22,59 +22,57 @@ public class Empleados extends Persona {
 <span class="fc" id="L22">		boolean valido = true;</span>
 <span class="pc bpc" id="L23" title="1 of 2 branches missed.">		if (salario &lt; 0) {</span>
 <span class="nc" id="L24">			valido = false;</span>
-			//throw new IllegalArgumentException(&quot;Salario no valido&quot;);
-<span class="nc" id="L26">			System.out.println(&quot;Salario no válido&quot;);</span>
+<span class="nc" id="L25">			System.out.println(&quot;Salario no válido&quot;);</span>
 		}
-<span class="fc" id="L28">		return valido;</span>
+<span class="fc" id="L27">		return valido;</span>
 	}
 
 	// Número seguridad social (2 dígitos de provincia + 8 dígitos de numero secuencial + 2 dígitos de control)
 	public boolean validarNumSegSocial() { // INTRODUCIDO  SIN ESPACIOS
-<span class="fc" id="L33">		boolean valido = true;</span>
+<span class="fc" id="L32">		boolean valido = true;</span>
 		/*************************ELIMINAR ESPACIOS************************************/
-<span class="pc bpc" id="L35" title="1 of 2 branches missed.">		if (num_seg_social.length() != 12) {</span>
-<span class="nc" id="L36">			valido = false;</span>
+<span class="pc bpc" id="L34" title="1 of 2 branches missed.">		if (num_seg_social.length() != 12) {</span>
+<span class="nc" id="L35">			valido = false;</span>
 		} else {
-<span class="fc" id="L38">			long valor = 0;</span>
-<span class="fc" id="L39">			int control = 0;</span>
-<span class="fc bfc" id="L40" title="All 2 branches covered.">			for (int i = 0; i &lt; num_seg_social.length() - 3; i++) {</span>
-<span class="fc" id="L41">				valor += Character.getNumericValue(num_seg_social.toCharArray()[i]);</span>
-<span class="fc" id="L42">				valor *= 10;</span>
+<span class="fc" id="L37">			long valor = 0;</span>
+<span class="fc" id="L38">			int control = 0;</span>
+<span class="fc bfc" id="L39" title="All 2 branches covered.">			for (int i = 0; i &lt; num_seg_social.length() - 3; i++) {</span>
+<span class="fc" id="L40">				valor += Character.getNumericValue(num_seg_social.toCharArray()[i]);</span>
+<span class="fc" id="L41">				valor *= 10;</span>
 			}
-<span class="fc" id="L44">			valor += Character.getNumericValue(num_seg_social.toCharArray()[9]);</span>
-<span class="fc" id="L45">			control = (Character.getNumericValue(num_seg_social.toCharArray()[10]) * 10) + Character.getNumericValue(num_seg_social.toCharArray()[11]);</span>
-<span class="pc bpc" id="L46" title="1 of 2 branches missed.">			if ((valor % 97) != control) {</span>
-<span class="nc" id="L47">				valido = false;</span>
-				//throw new IllegalArgumentException(&quot;Numero de seguridad social no valido&quot;);
-<span class="nc" id="L49">				System.out.println(&quot;Número de seguridad social no válido&quot;);</span>
+<span class="fc" id="L43">			valor += Character.getNumericValue(num_seg_social.toCharArray()[9]);</span>
+<span class="fc" id="L44">			control = (Character.getNumericValue(num_seg_social.toCharArray()[10]) * 10) + Character.getNumericValue(num_seg_social.toCharArray()[11]);</span>
+<span class="pc bpc" id="L45" title="1 of 2 branches missed.">			if ((valor % 97) != control) {</span>
+<span class="nc" id="L46">				valido = false;</span>
+<span class="nc" id="L47">				System.out.println(&quot;Número de seguridad social no válido&quot;);</span>
 			}
 		}
-<span class="fc" id="L52">		return valido;</span>
+<span class="fc" id="L50">		return valido;</span>
 	}
 
 	@Override
 	public String toString() {
-<span class="fc" id="L57">		return super.toString() + &quot;, num_seg_social = &quot; + num_seg_social + &quot;, salario = &quot; + salario + &quot;, turno = &quot; + turno;</span>
+<span class="fc" id="L55">		return super.toString() + &quot;, num_seg_social = &quot; + num_seg_social + &quot;, salario = &quot; + salario + &quot;, turno = &quot; + turno;</span>
 	}
 
 	public String getNumSeguridadSocial() {
-<span class="nc" id="L61">		return num_seg_social;</span>
+<span class="nc" id="L59">		return num_seg_social;</span>
 	}
 
 	public int getSalario() {
-<span class="nc" id="L65">		return salario;</span>
+<span class="nc" id="L63">		return salario;</span>
 	}
 
 	public Turno getTurno() {
-<span class="nc" id="L69">		return turno;</span>
+<span class="nc" id="L67">		return turno;</span>
 	}
 
 	public void setNumSeguridadSocial(String numero) {
-<span class="nc" id="L73">		num_seg_social = numero;</span>
-<span class="nc" id="L74">	}</span>
+<span class="nc" id="L71">		num_seg_social = numero;</span>
+<span class="nc" id="L72">	}</span>
 
 	public void setSalario(int salario) {
-<span class="nc" id="L77">		this.salario = salario;</span>
-<span class="nc" id="L78">	}</span>
+<span class="nc" id="L75">		this.salario = salario;</span>
+<span class="nc" id="L76">	}</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span></div></body></html>
