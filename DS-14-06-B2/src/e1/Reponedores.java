@@ -5,7 +5,6 @@ public class Reponedores extends Empleados {
 
 	public Reponedores(String nombre, String apellidos, String dni, String direccion, String telefono, String numeroSegSocial, int salario, Turno turno, String empresa) {
 		super(nombre, apellidos, dni, direccion, telefono, numeroSegSocial, salario, turno);
-		//if (turno == Turno.noche){throw new IllegalArgumentException("No hay reponnedores en el turno de noche");}
 		empresaProcedencia = empresa;
 	}
 
@@ -23,6 +22,6 @@ public class Reponedores extends Empleados {
 
 	@Override
 	public String toString() {
-		return super.toString() + ", empresaProcedencia=" + empresaProcedencia + '}';
+		return super.toString() + ", empresaProcedencia = " + empresaProcedencia + '}';
 	}
 }

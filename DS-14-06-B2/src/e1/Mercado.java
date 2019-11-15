@@ -4,14 +4,10 @@ import java.util.*;
 
 public class Mercado {
 
-	ArrayList < Clientes > clientes = new ArrayList < > ();
-	//    ArrayList <Dependientes> dependientes = new ArrayList();
-	//    ArrayList <Reponedores> reponedores = new ArrayList();
-	ArrayList < Empleados > empleados = new ArrayList < > ();
+	private List < Clientes > clientes = new ArrayList < > ();
+	private List < Empleados > empleados = new ArrayList < > ();
 
-	//funciones requeridas por el enunciado
-
-	public boolean agregarCliente(Clientes cliente) { // añadir condiciones
+	public boolean agregarCliente(Clientes cliente) {
 		if (cliente == null) {
 			return false;
 		}
@@ -29,16 +25,16 @@ public class Mercado {
 		return clientes.add(cliente);
 	}
 
-	public boolean agregarEmpleado(Empleados empleado) { //añadir condiciones***
+	public boolean agregarEmpleado(Empleados empleado) {
 		if (empleado == null) {
 			return false;
 		}
 		if (empleado.validarNombreApellidos() && empleado.validarDNI() && empleado.validarTelefono() && empleado.validarSalario() && empleado.validarNumSegSocial()) {
 			Reponedores reponedor = new Reponedores("", "", "11399724G", "", "", "", 0, Empleados.Turno.noche, "");
 			if ((empleado.getClass() == reponedor.getClass()) && (empleado.turno == reponedor.turno)) {
-				System.out.println("No hay reponedores en el turno de noche.");
-				//                    throw new IllegalArgumentException("No hay reponedores en el turno de noche");
-				return false;
+				//System.out.println("No hay reponedores en el turno de noche.");
+				throw new IllegalArgumentException("No hay reponedores en el turno de noche");
+				//return false;
 			} else {
 				if (empleados.isEmpty()) {
 					return empleados.add(empleado);
