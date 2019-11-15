@@ -17,7 +17,6 @@ public class Dependientes extends Empleados {
 	}
 
 	public void setTurno(Turno turno) {
-		//if (turno == Turno.noche){salario += 150;}
 		this.turno = turno;
 	}
 

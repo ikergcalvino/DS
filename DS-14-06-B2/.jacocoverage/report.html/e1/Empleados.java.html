@@ -17,19 +17,19 @@ public class Empleados extends Persona {
 <span class="fc" id="L17">		this.turno = turno;</span>
 <span class="fc" id="L18">	}</span>
 
-	//numero de compras y salario(no pueden ser negativos)
+	// Número de compras y salario (no pueden ser negativos)
 	public boolean validarSalario() {
 <span class="fc" id="L22">		boolean valido = true;</span>
 <span class="pc bpc" id="L23" title="1 of 2 branches missed.">		if (salario &lt; 0) {</span>
 <span class="nc" id="L24">			valido = false;</span>
 			//throw new IllegalArgumentException(&quot;Salario no valido&quot;);
-<span class="nc" id="L26">			System.out.println(&quot;Salario no valido&quot;);</span>
+<span class="nc" id="L26">			System.out.println(&quot;Salario no válido&quot;);</span>
 		}
 <span class="fc" id="L28">		return valido;</span>
 	}
 
-	//numero seguridad social(2 digitos de provincia + 8 digitos de numero secuencial + 2 digitos de control)
-	public boolean validarNumSegSocial() { //INTRODUCIDO  SIN ESPACIOS
+	// Número seguridad social (2 dígitos de provincia + 8 dígitos de numero secuencial + 2 dígitos de control)
+	public boolean validarNumSegSocial() { // INTRODUCIDO  SIN ESPACIOS
 <span class="fc" id="L33">		boolean valido = true;</span>
 		/*************************ELIMINAR ESPACIOS************************************/
 <span class="pc bpc" id="L35" title="1 of 2 branches missed.">		if (num_seg_social.length() != 12) {</span>
@@ -46,7 +46,7 @@ public class Empleados extends Persona {
 <span class="pc bpc" id="L46" title="1 of 2 branches missed.">			if ((valor % 97) != control) {</span>
 <span class="nc" id="L47">				valido = false;</span>
 				//throw new IllegalArgumentException(&quot;Numero de seguridad social no valido&quot;);
-<span class="nc" id="L49">				System.out.println(&quot;Numero de seguridad social no valido&quot;);</span>
+<span class="nc" id="L49">				System.out.println(&quot;Número de seguridad social no válido&quot;);</span>
 			}
 		}
 <span class="fc" id="L52">		return valido;</span>
@@ -54,7 +54,7 @@ public class Empleados extends Persona {
 
 	@Override
 	public String toString() {
-<span class="fc" id="L57">		return super.toString() + &quot;, num_seg_social=&quot; + num_seg_social + &quot;, salario=&quot; + salario + &quot;, turno=&quot; + turno;</span>
+<span class="fc" id="L57">		return super.toString() + &quot;, num_seg_social = &quot; + num_seg_social + &quot;, salario = &quot; + salario + &quot;, turno = &quot; + turno;</span>
 	}
 
 	public String getNumSeguridadSocial() {

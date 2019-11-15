@@ -32,9 +32,7 @@ public class Mercado {
 		if (empleado.validarNombreApellidos() && empleado.validarDNI() && empleado.validarTelefono() && empleado.validarSalario() && empleado.validarNumSegSocial()) {
 			Reponedores reponedor = new Reponedores("", "", "11399724G", "", "", "", 0, Empleados.Turno.noche, "");
 			if ((empleado.getClass() == reponedor.getClass()) && (empleado.turno == reponedor.turno)) {
-				//System.out.println("No hay reponedores en el turno de noche.");
 				throw new IllegalArgumentException("No hay reponedores en el turno de noche");
-				//return false;
 			} else {
 				if (empleados.isEmpty()) {
 					return empleados.add(empleado);
