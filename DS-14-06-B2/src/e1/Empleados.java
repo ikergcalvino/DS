@@ -17,19 +17,19 @@ public class Empleados extends Persona {
 		this.turno = turno;
 	}
 
-	//numero de compras y salario(no pueden ser negativos)
+	// Número de compras y salario (no pueden ser negativos)
 	public boolean validarSalario() {
 		boolean valido = true;
 		if (salario < 0) {
 			valido = false;
 			//throw new IllegalArgumentException("Salario no valido");
-			System.out.println("Salario no valido");
+			System.out.println("Salario no válido");
 		}
 		return valido;
 	}
 
-	//numero seguridad social(2 digitos de provincia + 8 digitos de numero secuencial + 2 digitos de control)
-	public boolean validarNumSegSocial() { //INTRODUCIDO  SIN ESPACIOS
+	// Número seguridad social (2 dígitos de provincia + 8 dígitos de numero secuencial + 2 dígitos de control)
+	public boolean validarNumSegSocial() { // INTRODUCIDO  SIN ESPACIOS
 		boolean valido = true;
 		/*************************ELIMINAR ESPACIOS************************************/
 		if (num_seg_social.length() != 12) {
@@ -46,7 +46,7 @@ public class Empleados extends Persona {
 			if ((valor % 97) != control) {
 				valido = false;
 				//throw new IllegalArgumentException("Numero de seguridad social no valido");
-				System.out.println("Numero de seguridad social no valido");
+				System.out.println("Número de seguridad social no válido");
 			}
 		}
 		return valido;
@@ -54,7 +54,7 @@ public class Empleados extends Persona {
 
 	@Override
 	public String toString() {
-		return super.toString() + ", num_seg_social=" + num_seg_social + ", salario=" + salario + ", turno=" + turno;
+		return super.toString() + ", num_seg_social = " + num_seg_social + ", salario = " + salario + ", turno = " + turno;
 	}
 
 	public String getNumSeguridadSocial() {

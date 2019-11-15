@@ -9,10 +9,10 @@ public class MercadoTest {
 
 	Mercado mercado;
 
-	Clientes c1, c2, c3, c4 //No se añade porq es igual  al 3
-	, c5; //No se añade porq es nulo
-	Empleados e1 //No se añade porq es reponedor con turno de noche(no existen)
-	, e2, e3, e4 //No se añade porq es igual al  2
+	Clientes c1, c2, c3, c4 // No se añade porq es igual  al 3
+	, c5; // No se añade porq es nulo
+	Empleados e1 // No se añade porq es reponedor con turno de noche(no existen)
+	, e2, e3, e4 // No se añade porq es igual al  2
 	, e5;
 	ArrayList < Clientes > clientes = new ArrayList();
 	ArrayList < Empleados > empleados = new ArrayList();
@@ -26,35 +26,21 @@ public class MercadoTest {
 		c3 = new Clientes("Juan", "Jimenez", "49514145K", "", "", "1234F", 100);
 		c4 = new Clientes("Juan", "Jimenez", "49514145K", "", "", "1234F", 100);
 		c5 = null;
-		//DEBERIA FUNCIONAR CON REPONEDORES EN HORARIO NOCTURNO???????????
-		e1 = new Reponedores("Je", "Gonzalez", "50949963H", "", "653254785", "121212121294", 1100, Empleados.Turno.noche, "Naturgy");
+		// DEBERIA FUNCIONAR CON REPONEDORES EN HORARIO NOCTURNO???????????
+		// e1 = new Reponedores("Je", "Gonzalez", "50949963H","","653254785", "121212121294", 1100, Empleados.Turno.noche, "Naturgy");
 		e2 = new Reponedores("Jesus", "Gonzalez", "12403768Y", "", "988541236", "111111111170", 1000, Empleados.Turno.tarde, "Naturgy");
 		e3 = new Dependientes("Antonio", "guapo", "39575720B", "", "351123456", "112222222225", 1150, Empleados.Turno.noche, "carnicerria");
 		e4 = new Reponedores("Jesus", "Gonzalez", "12403768Y", "", "321852951", "113333333377", 1000, Empleados.Turno.tarde, "Naturgy");
 		e5 = new Dependientes("Mario", "gonzalez", "29089391A", "", "753951456", "444444444486", 1000, Empleados.Turno.mañana, "pescaderia");
 
-		//        clientes.add(c1);
-		//        clientes.add(c2);
-		//        clientes.add(c3);
-		//        clientes.add(c4);
-		//        clientes.add(c5);
-		//        
-		//        empleados.add(e1);
-		//        empleados.add(e2);
-		//        empleados.add(e3);
-		//        empleados.add(e4);
-		//        empleados.add(e5);
-		//        
-		//        assertTrue(mercado.agregarClientes(clientes));
-		//        assertTrue(mercado.agregarEmpleados(empleados));
+		clientes.add(c1);
+		clientes.add(c2);
+		clientes.add(c3);
+		clientes.add(c4);
+		clientes.add(c5);
 
-		assertTrue(mercado.agregarCliente(c1));
-		assertTrue(mercado.agregarCliente(c2));
-		assertTrue(mercado.agregarCliente(c3));
-		assertFalse(mercado.agregarCliente(c4));
-		assertFalse(mercado.agregarCliente(c5));
+		assertTrue(mercado.agregarClientes(clientes));
 
-		assertFalse(mercado.agregarEmpleado(e1));
 		assertTrue(mercado.agregarEmpleado(e2));
 		assertTrue(mercado.agregarEmpleado(e3));
 		assertFalse(mercado.agregarEmpleado(e4));
@@ -71,6 +57,5 @@ public class MercadoTest {
 	@Test
 	public void testPersonasMercado() {
 		assertEquals(6, mercado.personasMercado().size());
-		//assertEquals(mercado.personasMercado(),mercado);
 	}
 }

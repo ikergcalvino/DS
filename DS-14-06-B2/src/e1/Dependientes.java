@@ -23,6 +23,6 @@ public class Dependientes extends Empleados {
 
 	@Override
 	public String toString() {
-		return super.toString() + ", especialidad=" + especialidad + '}';
+		return super.toString() + ", especialidad = " + especialidad + '}';
 	}
 }

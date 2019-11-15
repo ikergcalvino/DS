@@ -15,18 +15,15 @@ public class Persona {
 		this.telefono = telefono;
 	}
 
-	//nombre,apellidos
 	public boolean validarNombreApellidos() {
 		boolean valido = true;
 		if (nombre.equals("") || apellidos.equals("")) {
 			valido = false;
-			//throw new IllegalArgumentException("Nombre o Apellidos no validos");
 			System.out.println("Nombre o Apellidos no validos");
 		}
 		return valido;
 	}
 
-	//dni
 	public boolean validarDNI() {
 		boolean valido = false;
 		char letras[] = { 'T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E' };
@@ -35,24 +32,18 @@ public class Persona {
 			valor += Character.getNumericValue(dni.toCharArray()[i]);
 			valor *= 10;
 		}
-		valor /= 10;                
+		valor /= 10;
 		if (dni.length() == 9 && dni.contains(Integer.toString(valor))) {
 			if (letras[valor % 23] == dni.toCharArray()[8]) {
 				valido = true;
 			}
-			//for (int i = 0; i < 22; i++) {
-			//                if (((valor % 23)==i) && dni.toCharArray()[8] == letras[i]) {
-			//                    valido = true;
-			//                }
-			//}
 		}
-		if (valido == false) { //throw new IllegalArgumentException("DNI no valido");
+		if (valido == false) {
 			System.out.println("DNI no valido");
 		}
 		return valido;
 	}
 
-	//telefono(nulo o 9 numeros)
 	public boolean validarTelefono() {
 		boolean valido = true;
 		if (!telefono.equals("")) {
@@ -66,7 +57,7 @@ public class Persona {
 				}
 			}
 		}
-		if (valido == false) { //throw new IllegalArgumentException("Telefono no valido");
+		if (valido == false) {
 			System.out.println("Telefono no valido");
 		}
 		return valido;
@@ -74,7 +65,7 @@ public class Persona {
 
 	@Override
 	public String toString() {
-		return "Persona{" + "nombre=" + nombre + ", apellidos=" + apellidos + ", dni=" + dni + ", direccion=" + direccion + ", telefono=" + telefono;
+		return "Persona{" + "nombre = " + nombre + ", apellidos = " + apellidos + ", dni = " + dni + ", direccion = " + direccion + ", telefono = " + telefono;
 	}
 
 	public String getNombre() {
