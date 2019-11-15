@@ -22,7 +22,6 @@ public class Empleados extends Persona {
 		boolean valido = true;
 		if (salario < 0) {
 			valido = false;
-			//throw new IllegalArgumentException("Salario no valido");
 			System.out.println("Salario no válido");
 		}
 		return valido;
@@ -45,7 +44,6 @@ public class Empleados extends Persona {
 			control = (Character.getNumericValue(num_seg_social.toCharArray()[10]) * 10) + Character.getNumericValue(num_seg_social.toCharArray()[11]);
 			if ((valor % 97) != control) {
 				valido = false;
-				//throw new IllegalArgumentException("Numero de seguridad social no valido");
 				System.out.println("Número de seguridad social no válido");
 			}
 		}

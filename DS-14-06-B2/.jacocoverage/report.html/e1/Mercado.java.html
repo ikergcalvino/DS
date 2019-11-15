@@ -4,128 +4,124 @@ import java.util.*;
 
 <span class="fc" id="L5">public class Mercado {</span>
 
-<span class="fc" id="L7">	ArrayList &lt; Clientes &gt; clientes = new ArrayList &lt; &gt; ();</span>
-	//    ArrayList &lt;Dependientes&gt; dependientes = new ArrayList();
-	//    ArrayList &lt;Reponedores&gt; reponedores = new ArrayList();
-<span class="fc" id="L10">	ArrayList &lt; Empleados &gt; empleados = new ArrayList &lt; &gt; ();</span>
+<span class="fc" id="L7">	private List &lt; Clientes &gt; clientes = new ArrayList &lt; &gt; ();</span>
+<span class="fc" id="L8">	private List &lt; Empleados &gt; empleados = new ArrayList &lt; &gt; ();</span>
 
-	//funciones requeridas por el enunciado
-
-	public boolean agregarCliente(Clientes cliente) { // añadir condiciones
-<span class="fc bfc" id="L15" title="All 2 branches covered.">		if (cliente == null) {</span>
-<span class="fc" id="L16">			return false;</span>
+	public boolean agregarCliente(Clientes cliente) {
+<span class="pc bpc" id="L11" title="1 of 2 branches missed.">		if (cliente == null) {</span>
+<span class="nc" id="L12">			return false;</span>
 		}
-<span class="pc bpc" id="L18" title="4 of 8 branches missed.">		if (cliente.validarDNI() &amp;&amp; cliente.validarCompras() &amp;&amp; cliente.validarNombreApellidos() &amp;&amp; cliente.validarTelefono()) {</span>
-<span class="fc bfc" id="L19" title="All 2 branches covered.">			if (clientes.isEmpty()) {</span>
-<span class="fc" id="L20">				return clientes.add(cliente);</span>
+<span class="pc bpc" id="L14" title="4 of 8 branches missed.">		if (cliente.validarDNI() &amp;&amp; cliente.validarCompras() &amp;&amp; cliente.validarNombreApellidos() &amp;&amp; cliente.validarTelefono()) {</span>
+<span class="fc bfc" id="L15" title="All 2 branches covered.">			if (clientes.isEmpty()) {</span>
+<span class="fc" id="L16">				return clientes.add(cliente);</span>
 			} else {
-<span class="fc bfc" id="L22" title="All 2 branches covered.">				for (int i = 0; i &lt; clientes.size(); i++) {</span>
-<span class="fc bfc" id="L23" title="All 2 branches covered.">					if (clientes.get(i).dni.equals(cliente.dni)) {</span>
-<span class="fc" id="L24">						return false;</span>
+<span class="fc bfc" id="L18" title="All 2 branches covered.">				for (int i = 0; i &lt; clientes.size(); i++) {</span>
+<span class="fc bfc" id="L19" title="All 2 branches covered.">					if (clientes.get(i).dni.equals(cliente.dni)) {</span>
+<span class="fc" id="L20">						return false;</span>
 					}
 				}
 			}
 		}
-<span class="fc" id="L29">		return clientes.add(cliente);</span>
+<span class="fc" id="L25">		return clientes.add(cliente);</span>
 	}
 
-	public boolean agregarEmpleado(Empleados empleado) { //añadir condiciones***
-<span class="pc bpc" id="L33" title="1 of 2 branches missed.">		if (empleado == null) {</span>
-<span class="nc" id="L34">			return false;</span>
+	public boolean agregarEmpleado(Empleados empleado) {
+<span class="pc bpc" id="L29" title="1 of 2 branches missed.">		if (empleado == null) {</span>
+<span class="nc" id="L30">			return false;</span>
 		}
-<span class="pc bpc" id="L36" title="5 of 10 branches missed.">		if (empleado.validarNombreApellidos() &amp;&amp; empleado.validarDNI() &amp;&amp; empleado.validarTelefono() &amp;&amp; empleado.validarSalario() &amp;&amp; empleado.validarNumSegSocial()) {</span>
-<span class="fc" id="L37">			Reponedores reponedor = new Reponedores(&quot;&quot;, &quot;&quot;, &quot;11399724G&quot;, &quot;&quot;, &quot;&quot;, &quot;&quot;, 0, Empleados.Turno.noche, &quot;&quot;);</span>
-<span class="fc bfc" id="L38" title="All 4 branches covered.">			if ((empleado.getClass() == reponedor.getClass()) &amp;&amp; (empleado.turno == reponedor.turno)) {</span>
-<span class="fc" id="L39">				System.out.println(&quot;No hay reponedores en el turno de noche.&quot;);</span>
-				//                    throw new IllegalArgumentException(&quot;No hay reponedores en el turno de noche&quot;);
-<span class="fc" id="L41">				return false;</span>
+<span class="pc bpc" id="L32" title="5 of 10 branches missed.">		if (empleado.validarNombreApellidos() &amp;&amp; empleado.validarDNI() &amp;&amp; empleado.validarTelefono() &amp;&amp; empleado.validarSalario() &amp;&amp; empleado.validarNumSegSocial()) {</span>
+<span class="fc" id="L33">			Reponedores reponedor = new Reponedores(&quot;&quot;, &quot;&quot;, &quot;11399724G&quot;, &quot;&quot;, &quot;&quot;, &quot;&quot;, 0, Empleados.Turno.noche, &quot;&quot;);</span>
+<span class="pc bpc" id="L34" title="1 of 4 branches missed.">			if ((empleado.getClass() == reponedor.getClass()) &amp;&amp; (empleado.turno == reponedor.turno)) {</span>
+				//System.out.println(&quot;No hay reponedores en el turno de noche.&quot;);
+<span class="nc" id="L36">				throw new IllegalArgumentException(&quot;No hay reponedores en el turno de noche&quot;);</span>
+				//return false;
 			} else {
-<span class="fc bfc" id="L43" title="All 2 branches covered.">				if (empleados.isEmpty()) {</span>
-<span class="fc" id="L44">					return empleados.add(empleado);</span>
+<span class="fc bfc" id="L39" title="All 2 branches covered.">				if (empleados.isEmpty()) {</span>
+<span class="fc" id="L40">					return empleados.add(empleado);</span>
 				} else {
-<span class="fc bfc" id="L46" title="All 2 branches covered.">					for (int i = 0; i &lt; empleados.size(); i++) {</span>
-<span class="fc bfc" id="L47" title="All 2 branches covered.">						if (empleados.get(i).dni == empleado.dni) {</span>
-<span class="fc" id="L48">							return false;</span>
+<span class="fc bfc" id="L42" title="All 2 branches covered.">					for (int i = 0; i &lt; empleados.size(); i++) {</span>
+<span class="fc bfc" id="L43" title="All 2 branches covered.">						if (empleados.get(i).dni == empleado.dni) {</span>
+<span class="fc" id="L44">							return false;</span>
 						}
 					}
-<span class="fc" id="L51">					return empleados.add(empleado);</span>
+<span class="fc" id="L47">					return empleados.add(empleado);</span>
 				}
 			}
 		} else {
-<span class="nc" id="L55">			return false;</span>
+<span class="nc" id="L51">			return false;</span>
 		}
 	}
 
 	public boolean agregarClientes(ArrayList &lt; Clientes &gt; listaClientes) {
-<span class="nc" id="L60">		int l = clientes.size();</span>
-<span class="nc bnc" id="L61" title="All 2 branches missed.">		for (int i = 0; i &lt; listaClientes.size() - 1; i++) {</span>
-<span class="nc" id="L62">			agregarCliente(listaClientes.get(i));</span>
+<span class="fc" id="L56">		int l = clientes.size();</span>
+<span class="fc bfc" id="L57" title="All 2 branches covered.">		for (int i = 0; i &lt; listaClientes.size() - 1; i++) {</span>
+<span class="fc" id="L58">			agregarCliente(listaClientes.get(i));</span>
 		}
-<span class="nc bnc" id="L64" title="All 2 branches missed.">		return (clientes.size() != l);</span>
+<span class="pc bpc" id="L60" title="1 of 2 branches missed.">		return (clientes.size() != l);</span>
 	}
 
 	public boolean agregarEmpleados(ArrayList &lt; Empleados &gt; listaEmpleados) {
-<span class="nc" id="L68">		int l = empleados.size();</span>
-<span class="nc bnc" id="L69" title="All 2 branches missed.">		for (int i = 0; i &lt; listaEmpleados.size(); i++) {</span>
-<span class="nc" id="L70">			agregarEmpleado(listaEmpleados.get(i));</span>
+<span class="nc" id="L64">		int l = empleados.size();</span>
+<span class="nc bnc" id="L65" title="All 2 branches missed.">		for (int i = 0; i &lt; listaEmpleados.size(); i++) {</span>
+<span class="nc" id="L66">			agregarEmpleado(listaEmpleados.get(i));</span>
 		}
-<span class="nc bnc" id="L72" title="All 2 branches missed.">		return (empleados.size() != l);</span>
+<span class="nc bnc" id="L68" title="All 2 branches missed.">		return (empleados.size() != l);</span>
 	}
 
 	public int salariosMercado() {
-<span class="fc" id="L76">		int suma = 0;</span>
-<span class="fc bfc" id="L77" title="All 2 branches covered.">		for (int i = 0; i &lt; empleados.size(); i++) {</span>
-<span class="fc" id="L78">			suma += empleados.get(i).salario;</span>
+<span class="fc" id="L72">		int suma = 0;</span>
+<span class="fc bfc" id="L73" title="All 2 branches covered.">		for (int i = 0; i &lt; empleados.size(); i++) {</span>
+<span class="fc" id="L74">			suma += empleados.get(i).salario;</span>
 		}
-<span class="fc" id="L80">		return suma;</span>
+<span class="fc" id="L76">		return suma;</span>
 	}
 
 	public ArrayList personasMercado() {
-<span class="fc" id="L84">		ArrayList &lt; Persona &gt; personas = new ArrayList &lt; &gt; ();</span>
-<span class="fc bfc" id="L85" title="All 2 branches covered.">		for (int i = 0; i &lt; clientes.size(); i++) {</span>
-<span class="fc" id="L86">			personas.add(clientes.get(i));</span>
+<span class="fc" id="L80">		ArrayList &lt; Persona &gt; personas = new ArrayList &lt; &gt; ();</span>
+<span class="fc bfc" id="L81" title="All 2 branches covered.">		for (int i = 0; i &lt; clientes.size(); i++) {</span>
+<span class="fc" id="L82">			personas.add(clientes.get(i));</span>
 		}
-<span class="fc bfc" id="L88" title="All 2 branches covered.">		for (int i = 0; i &lt; empleados.size(); i++) {</span>
-<span class="fc" id="L89">			personas.add(empleados.get(i));</span>
+<span class="fc bfc" id="L84" title="All 2 branches covered.">		for (int i = 0; i &lt; empleados.size(); i++) {</span>
+<span class="fc" id="L85">			personas.add(empleados.get(i));</span>
 		}
-<span class="fc bfc" id="L91" title="All 2 branches covered.">		for (int i = 0; i &lt; clientes.size(); i++) {</span>
+<span class="fc bfc" id="L87" title="All 2 branches covered.">		for (int i = 0; i &lt; clientes.size(); i++) {</span>
+<span class="fc" id="L88">			System.out.println(&quot; &quot;);</span>
+<span class="fc" id="L89">			System.out.println(clientes.get(i).toString());</span>
+		}
+<span class="fc bfc" id="L91" title="All 2 branches covered.">		for (int i = 0; i &lt; empleados.size(); i++) {</span>
 <span class="fc" id="L92">			System.out.println(&quot; &quot;);</span>
-<span class="fc" id="L93">			System.out.println(clientes.get(i).toString());</span>
+<span class="fc" id="L93">			System.out.println(empleados.get(i).toString());</span>
 		}
-<span class="fc bfc" id="L95" title="All 2 branches covered.">		for (int i = 0; i &lt; empleados.size(); i++) {</span>
-<span class="fc" id="L96">			System.out.println(&quot; &quot;);</span>
-<span class="fc" id="L97">			System.out.println(empleados.get(i).toString());</span>
-		}
-<span class="fc" id="L99">		return personas;</span>
+<span class="fc" id="L95">		return personas;</span>
 	}
 
 	@Override
 	public int hashCode() {
-<span class="nc" id="L104">		int hash = 5;</span>
-<span class="nc" id="L105">		hash = 89 * hash + Objects.hashCode(this.clientes);</span>
-<span class="nc" id="L106">		hash = 89 * hash + Objects.hashCode(this.empleados);</span>
-<span class="nc" id="L107">		return hash;</span>
+<span class="nc" id="L100">		int hash = 5;</span>
+<span class="nc" id="L101">		hash = 89 * hash + Objects.hashCode(this.clientes);</span>
+<span class="nc" id="L102">		hash = 89 * hash + Objects.hashCode(this.empleados);</span>
+<span class="nc" id="L103">		return hash;</span>
 	}
 
 	@Override
 	public boolean equals(Object obj) {
-<span class="nc bnc" id="L112" title="All 2 branches missed.">		if (this == obj) {</span>
-<span class="nc" id="L113">			return true;</span>
+<span class="nc bnc" id="L108" title="All 2 branches missed.">		if (this == obj) {</span>
+<span class="nc" id="L109">			return true;</span>
 		}
-<span class="nc bnc" id="L115" title="All 2 branches missed.">		if (obj == null) {</span>
-<span class="nc" id="L116">			return false;</span>
+<span class="nc bnc" id="L111" title="All 2 branches missed.">		if (obj == null) {</span>
+<span class="nc" id="L112">			return false;</span>
 		}
-<span class="nc bnc" id="L118" title="All 2 branches missed.">		if (getClass() != obj.getClass()) {</span>
+<span class="nc bnc" id="L114" title="All 2 branches missed.">		if (getClass() != obj.getClass()) {</span>
+<span class="nc" id="L115">			return false;</span>
+		}
+<span class="nc" id="L117">		final Mercado other = (Mercado) obj;</span>
+<span class="nc bnc" id="L118" title="All 2 branches missed.">		if (!Objects.equals(this.clientes, other.clientes)) {</span>
 <span class="nc" id="L119">			return false;</span>
 		}
-<span class="nc" id="L121">		final Mercado other = (Mercado) obj;</span>
-<span class="nc bnc" id="L122" title="All 2 branches missed.">		if (!Objects.equals(this.clientes, other.clientes)) {</span>
-<span class="nc" id="L123">			return false;</span>
+<span class="nc bnc" id="L121" title="All 2 branches missed.">		if (!Objects.equals(this.empleados, other.empleados)) {</span>
+<span class="nc" id="L122">			return false;</span>
 		}
-<span class="nc bnc" id="L125" title="All 2 branches missed.">		if (!Objects.equals(this.empleados, other.empleados)) {</span>
-<span class="nc" id="L126">			return false;</span>
-		}
-<span class="nc" id="L128">		return true;</span>
+<span class="nc" id="L124">		return true;</span>
 	}
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span></div></body></html>

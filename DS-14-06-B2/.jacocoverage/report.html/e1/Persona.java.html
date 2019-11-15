@@ -15,90 +15,81 @@ public class Persona {
 <span class="fc" id="L15">		this.telefono = telefono;</span>
 <span class="fc" id="L16">	}</span>
 
-	//nombre,apellidos
 	public boolean validarNombreApellidos() {
-<span class="fc" id="L20">		boolean valido = true;</span>
-<span class="pc bpc" id="L21" title="2 of 4 branches missed.">		if (nombre.equals(&quot;&quot;) || apellidos.equals(&quot;&quot;)) {</span>
-<span class="nc" id="L22">			valido = false;</span>
-			//throw new IllegalArgumentException(&quot;Nombre o Apellidos no validos&quot;);
-<span class="nc" id="L24">			System.out.println(&quot;Nombre o Apellidos no validos&quot;);</span>
+<span class="fc" id="L19">		boolean valido = true;</span>
+<span class="pc bpc" id="L20" title="2 of 4 branches missed.">		if (nombre.equals(&quot;&quot;) || apellidos.equals(&quot;&quot;)) {</span>
+<span class="nc" id="L21">			valido = false;</span>
+<span class="nc" id="L22">			System.out.println(&quot;Nombre o Apellidos no validos&quot;);</span>
 		}
-<span class="fc" id="L26">		return valido;</span>
+<span class="fc" id="L24">		return valido;</span>
 	}
 
-	//dni
 	public boolean validarDNI() {
-<span class="fc" id="L31">		boolean valido = false;</span>
-<span class="fc" id="L32">		char letras[] = { 'T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E' };</span>
-<span class="fc" id="L33">		int valor = 0;</span>
-<span class="fc bfc" id="L34" title="All 2 branches covered.">		for (int i = 0; i &lt; dni.length() - 1; i++) {</span>
-<span class="fc" id="L35">			valor += Character.getNumericValue(dni.toCharArray()[i]);</span>
-<span class="fc" id="L36">			valor *= 10;</span>
+<span class="fc" id="L28">		boolean valido = false;</span>
+<span class="fc" id="L29">		char letras[] = { 'T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E' };</span>
+<span class="fc" id="L30">		int valor = 0;</span>
+<span class="fc bfc" id="L31" title="All 2 branches covered.">		for (int i = 0; i &lt; dni.length() - 1; i++) {</span>
+<span class="fc" id="L32">			valor += Character.getNumericValue(dni.toCharArray()[i]);</span>
+<span class="fc" id="L33">			valor *= 10;</span>
 		}
-<span class="fc" id="L38">		valor /= 10;                </span>
-<span class="pc bpc" id="L39" title="2 of 4 branches missed.">		if (dni.length() == 9 &amp;&amp; dni.contains(Integer.toString(valor))) {</span>
-<span class="pc bpc" id="L40" title="1 of 2 branches missed.">			if (letras[valor % 23] == dni.toCharArray()[8]) {</span>
-<span class="fc" id="L41">				valido = true;</span>
+<span class="fc" id="L35">		valor /= 10;</span>
+<span class="pc bpc" id="L36" title="2 of 4 branches missed.">		if (dni.length() == 9 &amp;&amp; dni.contains(Integer.toString(valor))) {</span>
+<span class="pc bpc" id="L37" title="1 of 2 branches missed.">			if (letras[valor % 23] == dni.toCharArray()[8]) {</span>
+<span class="fc" id="L38">				valido = true;</span>
 			}
-			//for (int i = 0; i &lt; 22; i++) {
-			//                if (((valor % 23)==i) &amp;&amp; dni.toCharArray()[8] == letras[i]) {
-			//                    valido = true;
-			//                }
-			//}
 		}
-<span class="pc bpc" id="L49" title="1 of 2 branches missed.">		if (valido == false) { //throw new IllegalArgumentException(&quot;DNI no valido&quot;);</span>
-<span class="nc" id="L50">			System.out.println(&quot;DNI no valido&quot;);</span>
+<span class="pc bpc" id="L41" title="1 of 2 branches missed.">		if (valido == false) {</span>
+<span class="nc" id="L42">			System.out.println(&quot;DNI no valido&quot;);</span>
 		}
-<span class="fc" id="L52">		return valido;</span>
+<span class="fc" id="L44">		return valido;</span>
 	}
 
-	//telefono(nulo o 9 numeros)
 	public boolean validarTelefono() {
-<span class="fc" id="L57">		boolean valido = true;</span>
-<span class="fc bfc" id="L58" title="All 2 branches covered.">		if (!telefono.equals(&quot;&quot;)) {</span>
-<span class="pc bpc" id="L59" title="1 of 2 branches missed.">			if (telefono.length() != 9) {</span>
-<span class="nc" id="L60">				valido = false;</span>
+<span class="fc" id="L48">		boolean valido = true;</span>
+<span class="fc bfc" id="L49" title="All 2 branches covered.">		if (!telefono.equals(&quot;&quot;)) {</span>
+<span class="pc bpc" id="L50" title="1 of 2 branches missed.">			if (telefono.length() != 9) {</span>
+<span class="nc" id="L51">				valido = false;</span>
 			} else {
-<span class="fc bfc" id="L62" title="All 2 branches covered.">				for (int i = 0; i &lt; telefono.length() - 1; i++) {</span>
-<span class="pc bpc" id="L63" title="1 of 2 branches missed.">					if (Character.getNumericValue(telefono.toCharArray()[i]) &gt; 9) {</span>
-<span class="nc" id="L64">						valido = false;</span>
+<span class="fc bfc" id="L53" title="All 2 branches covered.">				for (int i = 0; i &lt; telefono.length() - 1; i++) {</span>
+<span class="pc bpc" id="L54" title="1 of 2 branches missed.">					if (Character.getNumericValue(telefono.toCharArray()[i]) &gt; 9) {</span>
+<span class="nc" id="L55">						valido = false;</span>
 					}
 				}
 			}
 		}
-<span class="pc bpc" id="L69" title="1 of 2 branches missed.">		if (valido == false) { //throw new IllegalArgumentException(&quot;Telefono no valido&quot;);</span>
-<span class="nc" id="L70">			System.out.println(&quot;Telefono no valido&quot;);</span>
+<span class="pc bpc" id="L60" title="1 of 2 branches missed.">		if (valido == false) {</span>
+<span class="nc" id="L61">			System.out.println(&quot;Telefono no valido&quot;);</span>
 		}
-<span class="fc" id="L72">		return valido;</span>
+<span class="fc" id="L63">		return valido;</span>
 	}
 
 	@Override
 	public String toString() {
-<span class="fc" id="L77">		return &quot;Persona{&quot; + &quot;nombre=&quot; + nombre + &quot;, apellidos=&quot; + apellidos + &quot;, dni=&quot; + dni + &quot;, direccion=&quot; + direccion + &quot;, telefono=&quot; + telefono;</span>
+<span class="fc" id="L68">		return &quot;Persona{&quot; + &quot;nombre = &quot; + nombre + &quot;, apellidos = &quot; + apellidos + &quot;, dni = &quot; + dni + &quot;, direccion = &quot; + direccion + &quot;, telefono = &quot; + telefono;</span>
 	}
 
 	public String getNombre() {
-<span class="nc" id="L81">		return nombre;</span>
+<span class="nc" id="L72">		return nombre;</span>
 	}
 
 	public String getApellidos() {
-<span class="nc" id="L85">		return apellidos;</span>
+<span class="nc" id="L76">		return apellidos;</span>
 	}
 
 	public String getDNI() {
-<span class="nc" id="L89">		return dni;</span>
+<span class="nc" id="L80">		return dni;</span>
 	}
 
 	public void setNombre(String nombre) {
-<span class="nc" id="L93">		this.nombre = nombre;</span>
-<span class="nc" id="L94">	}</span>
+<span class="nc" id="L84">		this.nombre = nombre;</span>
+<span class="nc" id="L85">	}</span>
 
 	public void setApellidos(String apellidos) {
-<span class="nc" id="L97">		this.apellidos = apellidos;</span>
-<span class="nc" id="L98">	}</span>
+<span class="nc" id="L88">		this.apellidos = apellidos;</span>
+<span class="nc" id="L89">	}</span>
 
 	public void setDNI(String dni) {
-<span class="nc" id="L101">		this.dni = dni;</span>
-<span class="nc" id="L102">	}</span>
+<span class="nc" id="L92">		this.dni = dni;</span>
+<span class="nc" id="L93">	}</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span></div></body></html>

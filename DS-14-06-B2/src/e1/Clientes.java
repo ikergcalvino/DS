@@ -17,7 +17,6 @@ public class Clientes extends Persona { // Hereda los atributos de persona
 		boolean valido = true;
 		if (num_compras < 0) {
 			valido = false;
-			//throw new IllegalArgumentException("Numero de compras no valido");
 			System.out.println("Numero de compras no valido");
 		}
 		return valido;
