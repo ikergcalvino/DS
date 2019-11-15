@@ -43,6 +43,10 @@ public class EuroCoinCollection implements Iterable<EuroCoin>{
 		coinCollection.remove(coin);
 	}
         
+        public EuroCoin getPosition (int p) {
+            return coinCollection.get(p);
+        }
+        
         public void ordenador1() {
             Collections.sort(coinCollection);
         }

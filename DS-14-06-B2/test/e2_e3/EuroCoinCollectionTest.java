@@ -105,5 +105,6 @@ public class EuroCoinCollectionTest {
     @Test
     public void testOrdenador(){
         collection.ordenador1();
+        assertEquals(c20_fr, collection.getPosition(0));
     }
 }
