@@ -3,9 +3,9 @@ package e2_e3;
 import java.util.*;
 
 // Represents a Euro coin collection
-public class EuroCoinCollection {
+public class EuroCoinCollection implements Iterable<EuroCoin>{
 
-	ArrayList < EuroCoin > coinCollection = new ArrayList();
+	private List<EuroCoin> coinCollection = new ArrayList<EuroCoin>();
 
         // Inserts a coin in the collection . If the coin is already in the
         // collection ( there is an equal coin inserted ) then the coin is not inserted .
@@ -42,4 +42,17 @@ public class EuroCoinCollection {
 	public void removeCoin(EuroCoin coin) {
 		coinCollection.remove(coin);
 	}
+        
+        public void ordenador1() {
+            Collections.sort(coinCollection);
+        }
+        
+        public void ordenador2(Comparator<EuroCoin> comparer) {
+            Collections.sort(coinCollection, comparer);
+        }
+        
+        @Override
+        public Iterator<EuroCoin> iterator() {
+            
+        }
 }

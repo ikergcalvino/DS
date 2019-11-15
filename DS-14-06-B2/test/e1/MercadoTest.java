@@ -59,7 +59,6 @@ public class MercadoTest {
 		assertTrue(mercado.agregarEmpleado(e3));
 		assertFalse(mercado.agregarEmpleado(e4));
 		assertTrue(mercado.agregarEmpleado(e5));
-
 	}
 
 //	Test of salariosMercado method, of class Mercado.

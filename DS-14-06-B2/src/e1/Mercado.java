@@ -1,7 +1,6 @@
 package e1;
 
-import java.util.ArrayList;
-import java.util.Objects;
+import java.util.*;
 
 public class Mercado {
 
@@ -12,7 +11,7 @@ public class Mercado {
 
 	//funciones requeridas por el enunciado
 
-	public boolean agregarCliente(Clientes cliente) { //añadir condiciones***
+	public boolean agregarCliente(Clientes cliente) { // añadir condiciones
 		if (cliente == null) {
 			return false;
 		}
@@ -40,7 +39,6 @@ public class Mercado {
 				System.out.println("No hay reponedores en el turno de noche.");
 				//                    throw new IllegalArgumentException("No hay reponedores en el turno de noche");
 				return false;
-
 			} else {
 				if (empleados.isEmpty()) {
 					return empleados.add(empleado);
@@ -63,7 +61,6 @@ public class Mercado {
 		for (int i = 0; i < listaClientes.size() - 1; i++) {
 			agregarCliente(listaClientes.get(i));
 		}
-
 		return (clientes.size() != l);
 	}
 
@@ -72,7 +69,6 @@ public class Mercado {
 		for (int i = 0; i < listaEmpleados.size(); i++) {
 			agregarEmpleado(listaEmpleados.get(i));
 		}
-
 		return (empleados.size() != l);
 	}
 
@@ -96,7 +92,6 @@ public class Mercado {
 			System.out.println(" ");
 			System.out.println(clientes.get(i).toString());
 		}
-
 		for (int i = 0; i < empleados.size(); i++) {
 			System.out.println(" ");
 			System.out.println(empleados.get(i).toString());
