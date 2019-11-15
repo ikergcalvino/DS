@@ -17,35 +17,34 @@ public class Clientes extends Persona { // Hereda los atributos de persona
 <span class="fc" id="L17">		boolean valido = true;</span>
 <span class="pc bpc" id="L18" title="1 of 2 branches missed.">		if (num_compras &lt; 0) {</span>
 <span class="nc" id="L19">			valido = false;</span>
-			//throw new IllegalArgumentException(&quot;Numero de compras no valido&quot;);
-<span class="nc" id="L21">			System.out.println(&quot;Numero de compras no valido&quot;);</span>
+<span class="nc" id="L20">			System.out.println(&quot;Numero de compras no valido&quot;);</span>
 		}
-<span class="fc" id="L23">		return valido;</span>
+<span class="fc" id="L22">		return valido;</span>
 	}
 
 	@Override
 	public String toString() {
-<span class="fc" id="L28">		return super.toString() + &quot;, cod_cliente = &quot; + cod_cliente + &quot;, num_compras = &quot; + num_compras + &quot;, descuento = &quot; + descuento + '}';</span>
+<span class="fc" id="L27">		return super.toString() + &quot;, cod_cliente = &quot; + cod_cliente + &quot;, num_compras = &quot; + num_compras + &quot;, descuento = &quot; + descuento + '}';</span>
 	}
 
 	public String getCodigo() {
-<span class="nc" id="L32">		return cod_cliente;</span>
+<span class="nc" id="L31">		return cod_cliente;</span>
 	}
 
 	public int getNumCompras() {
-<span class="nc" id="L36">		return num_compras;</span>
+<span class="nc" id="L35">		return num_compras;</span>
 	}
 
 	public float getDescuento() {
-<span class="nc" id="L40">		return descuento;</span>
+<span class="nc" id="L39">		return descuento;</span>
 	}
 
 	public void setCodigo(String codigo) {
-<span class="nc" id="L44">		cod_cliente = codigo;</span>
-<span class="nc" id="L45">	}</span>
+<span class="nc" id="L43">		cod_cliente = codigo;</span>
+<span class="nc" id="L44">	}</span>
 
 	public void setNumCompras(int compras) {
-<span class="nc" id="L48">		num_compras = compras;</span>
-<span class="nc" id="L49">	}</span>
+<span class="nc" id="L47">		num_compras = compras;</span>
+<span class="nc" id="L48">	}</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span></div></body></html>

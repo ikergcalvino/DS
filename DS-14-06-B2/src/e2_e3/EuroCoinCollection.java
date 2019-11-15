@@ -44,11 +44,11 @@ public class EuroCoinCollection implements Iterable<EuroCoin>{
 	}
         
         public void ordenador1() {
-//            Collections.sort(coinCollection);
+            Collections.sort(coinCollection);
         }
         
         public void ordenador2(Comparator<EuroCoin> comparer) {
-//            Collections.sort(coinCollection, comparer);
+            Collections.sort(coinCollection, comparer);
         }
         
         @Override
