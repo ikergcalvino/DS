@@ -5,7 +5,7 @@ import java.util.*;
 // Represents a Euro coin collection
 public class EuroCoinCollection implements Iterable<EuroCoin>{
 
-	private List<EuroCoin> coinCollection = new ArrayList<EuroCoin>();
+	private List<EuroCoin> coinCollection = new ArrayList<>();
 
         // Inserts a coin in the collection . If the coin is already in the
         // collection ( there is an equal coin inserted ) then the coin is not inserted .
