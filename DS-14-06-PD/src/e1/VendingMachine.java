@@ -5,10 +5,11 @@ import java.util.*;
 public class VendingMachine {
     
     private List<EuroCoin> deposito = new ArrayList<>(); // Todas las monedas de la máquina
-    private List<EuroCoin> monedas = new ArrayList<>(); // Monedas recién insertadas
     private List<Producto> productos = new ArrayList<>(); // Productos de la máquina
+    private List<EuroCoin> monedas = new ArrayList<>(); // Monedas recién insertadas
     
-    void insertProduct (Producto p) {
+    void insertProduct (String product, int price) {
+        Producto p = new Producto (product, price);
         productos.add(p);
     }
     
@@ -25,7 +26,9 @@ public class VendingMachine {
     }
     
     List<EuroCoin> buy (String product) {
-        int efectivo = value(monedas);
+        int efectivo = value();
+
+        return null;
     }
     
     List<EuroCoin> cancel() {
