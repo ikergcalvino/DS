@@ -2,12 +2,12 @@ package e1;
 
 public class Producto {
 
-    public String nombre;
-    public int precio;
+    private final String nombre;
+    private final int precio;
     
-    public Producto (String n, int p) {
-        nombre = n;
-        precio = p;
+    public Producto (String nombre, int precio) {
+        this.nombre = nombre;
+        this.precio = precio;
     }
     
     public String getName() {
