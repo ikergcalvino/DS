@@ -2,7 +2,7 @@ package e1;
 
 
 import java.util.*;
-import org.junit.Before;
+import org.Junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -143,6 +143,9 @@ public class VendingMachineTest {
         
         maquina.insertCoin(e2); maquina.insertCoin(c50); maquina.insertCoin(c20); maquina.insertCoin(c20); maquina.insertCoin(c20);
         assertEquals(10, maquina.value(maquina.buy("Máquina")));
+        
+        maquina.insertCoin(c10);
+        assertEquals(10, maquina.value(maquina.buy("Maquina")));
         
         maquina.changeModo("S");
         
