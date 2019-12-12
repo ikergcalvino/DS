@@ -92,18 +92,85 @@ public class VendingMachineTest {
     }
     
     @Test
+    public void testSort() {
+        maquina.insertCoin(c2);
+        maquina.insertCoin(e1);
+        maquina.insertCoin(c5);
+        maquina.insertCoin(c50);
+        maquina.insertCoin(c10);
+        maquina.insertCoin(c1);
+        maquina.insertCoin(c20);
+        maquina.insertCoin(e2);
+        maquina.sortMonedas();
+        assertEquals(200, maquina.getMonedas().get(0).getValue().getValor());
+        assertEquals(100, maquina.getMonedas().get(1).getValue().getValor());
+        assertEquals(50, maquina.getMonedas().get(2).getValue().getValor());
+        assertEquals(20, maquina.getMonedas().get(3).getValue().getValor());
+        assertEquals(10, maquina.getMonedas().get(4).getValue().getValor());
+        assertEquals(5, maquina.getMonedas().get(5).getValue().getValor());
+        assertEquals(2, maquina.getMonedas().get(6).getValue().getValor());
+        assertEquals(1, maquina.getMonedas().get(7).getValue().getValor());
+    }
+    
+    @Test
     public void testBuy() {
-//        
+        maquina.insertProduct("Regaliz", 50);
+        maquina.insertProduct("Kit-Kat", 100);
+        maquina.insertProduct("Oreo", 150);
+        maquina.insertProduct("Coca-Cola", 200);
+        maquina.insertProduct("Chupito", 250);
+        maquina.insertProduct("Máquina", 300);
+        
+        maquina.insertDeposito(c1);     maquina.insertDeposito(c1);     maquina.insertDeposito(c1);
+        maquina.insertDeposito(c2);     maquina.insertDeposito(c2);     maquina.insertDeposito(c2);
+        maquina.insertDeposito(c5);     maquina.insertDeposito(c5);     maquina.insertDeposito(c5);
+        maquina.insertDeposito(c10);    maquina.insertDeposito(c10);    maquina.insertDeposito(c10);
+        maquina.insertDeposito(c20);    maquina.insertDeposito(c20);    maquina.insertDeposito(c20);
+        maquina.insertDeposito(c50);    maquina.insertDeposito(c50);    maquina.insertDeposito(c50);
+        maquina.insertDeposito(e1);     maquina.insertDeposito(e1);     maquina.insertDeposito(e1);
+        maquina.insertDeposito(e2);     maquina.insertDeposito(e2);     maquina.insertDeposito(e2);
+        
+        maquina.setModo("C");
+        
+        maquina.insertCoin(e2); maquina.insertCoin(e2);
+        assertEquals(150, maquina.value(maquina.buy("Chupito")));
+        
+        maquina.insertCoin(e1);
+        assertEquals(0, maquina.value(maquina.buy("Kit-Kat")));
+        
+        maquina.insertCoin(e2); maquina.insertCoin(c50);
+        assertEquals(100, maquina.value(maquina.buy("Oreo")));
+        
+        maquina.insertCoin(e2); maquina.insertCoin(c50); maquina.insertCoin(c20); maquina.insertCoin(c20); maquina.insertCoin(c20);
+        assertEquals(10, maquina.value(maquina.buy("Máquina")));
+        
+        maquina.changeModo("S");
+        
+        maquina.insertCoin(e1); maquina.insertCoin(e1); maquina.insertCoin(e1);
+        assertEquals(100, maquina.value(maquina.buy("Oreo")));
+        
+        maquina.insertCoin(e2); maquina.insertCoin(c50); maquina.insertCoin(e1);
+        assertEquals(100, maquina.value(maquina.buy("Chupito")));
+        
+        maquina.insertCoin(e2); maquina.insertCoin(e2); maquina.insertCoin(e1);
+        assertEquals(200, maquina.value(maquina.buy("Máquina")));
+        
+        maquina.insertCoin(e2); maquina.insertCoin(e2); maquina.insertCoin(c10);
+        assertEquals(10, maquina.value(maquina.buy("Máquina")));
+        
+        maquina.insertCoin(e2); maquina.insertCoin(e1);
+        assertEquals(0, maquina.value(maquina.buy("Máquina")));
+        
     }
     
     @Test
     public void testCancel() {
-//        assertEquals(monedas, maquina.cancel());
-//        maquina.insertCoin(e1);
-//        assertEquals(monedas, maquina.cancel());
-//        maquina.insertCoin(e1);
-//        maquina.insertCoin(e2);
-//        assertEquals(monedas, maquina.cancel());
+        assertEquals(maquina.getMonedas(), maquina.cancel());
+        maquina.insertCoin(e1);
+        assertEquals(maquina.getMonedas(), maquina.cancel());
+        maquina.insertCoin(e1);
+        maquina.insertCoin(e2);
+        assertEquals(maquina.getMonedas(), maquina.cancel());
     }
     
     @Test
