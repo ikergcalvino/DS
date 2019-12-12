@@ -5,10 +5,9 @@ import java.util.*;
 public class CambioSimple extends VendingMachine implements Cambio {
 
     @Override
-    public List<EuroCoin> devolverCambio() {
-        for (int i = 0; i < monedas.size(); i++) {
-            efectivo -= monedas.get(i).valor.getValue();
-        }
+    public List<EuroCoin> devolverCambio(List<EuroCoin> monedas, int efectivo) {
+        List<EuroCoin> cambio = new ArrayList<>();
+        return null;
     }
     
 }
