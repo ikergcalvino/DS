@@ -11,6 +11,7 @@ public class CambioCompuesto extends VendingMachine implements Cambio {
             if (monedas.get(i).getValue().getValor() <= efectivo) {
                 efectivo -= monedas.get(i).getValue().getValor();
                 cambio.add(monedas.get(i));
+                monedas.remove(monedas.get(i));
             }
         }
         return cambio;

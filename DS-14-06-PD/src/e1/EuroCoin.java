@@ -6,7 +6,7 @@ public class EuroCoin {
 
     private final Valor valor;
     
-    public EuroCoin(Valor value) {
+    public EuroCoin (Valor value) {
         this.valor = value;
     }	            
 	
