@@ -2,7 +2,6 @@ package e1;
 
 
 import java.util.*;
-import org.Junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -18,7 +17,6 @@ public class VendingMachineTest {
     
     VendingMachine maquina;
     
-    @Before
     public void setUp() {
         
         maquina = new VendingMachine();
@@ -145,7 +143,7 @@ public class VendingMachineTest {
         assertEquals(10, maquina.value(maquina.buy("Máquina")));
         
         maquina.insertCoin(c10);
-        assertEquals(10, maquina.value(maquina.buy("Maquina")));
+        assertEquals(10, maquina.value(maquina.buy("Máquina")));
         
         maquina.changeModo("S");
         

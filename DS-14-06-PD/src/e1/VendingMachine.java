@@ -136,7 +136,7 @@ public class VendingMachine { // implements Comparable
                 devolucion = cambio2.devolverCambio(deposito, efectivo);
             }
             
-        }else {
+        } else {
             for (int i = 0; i < monedas.size(); i++) {
                 devolucion.add(monedas.get(i));
             }
