@@ -35,14 +35,13 @@ public class MercadoAcciones extends Observable {
         }
     }
 
-    @Override
     public void deleteObserver(Observer observer) {
         observadores.remove(observer);
     }
 
     public void notification() {
         for (int i = 0; i < observadores.size(); i++) {
-            observadores.get(i).update(observable, i);
+            observadores.get(i).update(observable, bolsa.get(i));
         }
     }
 }
