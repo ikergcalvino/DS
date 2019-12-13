@@ -2,7 +2,7 @@ package e2;
 
 import java.util.*;
 
-public class MercadoAcciones extends Observable {
+public class MercadoAcciones {
     
     private final List<Accion> bolsa = new ArrayList<>(); // Lista de acciones
     

@@ -204,5 +204,21 @@ public class VendingMachineTest {
         assertTrue(e1.equals(e1));
         assertTrue(c50.equals(c50));
         assertTrue(e2.equals(e2));
+        assertFalse(e2.equals(p2));
+    }
+    
+    @Test
+    public void testsExtra() {
+        maquina.insertDeposito(e2);
+        assertEquals(1, maquina.numEDeposito());
+        assertEquals(1, maquina.getDeposito().size());
+        maquina.insertDeposito(e1);
+        assertEquals(2, maquina.numEDeposito());
+        assertEquals(2, maquina.getDeposito().size());
+        maquina.insertProduct("Regaliz", 50);
+        maquina.insertProduct("Regaliz", 50);
+        maquina.insertProduct("Regaliz", 50);
+        maquina.insertProduct("Regaliz", 50);
+        assertEquals(4, maquina.getProductos().size());
     }
 }
