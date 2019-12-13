@@ -2,7 +2,7 @@ package e2;
 
 import java.util.*;
 
-public class Accion {
+public class Accion extends MercadoAcciones {
     
     private String simbolo;
     private float cierre;
@@ -40,22 +40,27 @@ public class Accion {
     
     public void setSimbolo (String simbolo) {
         this.simbolo = simbolo;
+        notification();
     }
     
     public void setCierre (float cierre) {
         this.cierre = cierre;
+        notification();
     }
     
     public void setMax (float max) {
         this.max = max;
+        notification();
     }
     
     public void setMin (float min) {
         this.min = min;
+        notification();
     }
     
     public void setVolumen (float volumen) {
         this.volumen = volumen;
+        notification();
     }
     
 }
