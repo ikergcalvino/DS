@@ -2,8 +2,9 @@ package e2;
 
 import java.util.*;
 
-public class MercadoAcciones {
+public class MercadoAcciones extends Observable {
     
+    private Observable observable;
     private final List<Accion> bolsa = new ArrayList<>(); // Lista de acciones
     private final List<Cliente> clientes = new ArrayList<>(); // Lista de clientes
     private final List<Observer> observadores = new ArrayList<>(); //Lista de observadores
@@ -34,13 +35,14 @@ public class MercadoAcciones {
         }
     }
 
-    public void ddeleteObserver (Observer observer) {
+    @Override
+    public void deleteObserver (Observer observer) {
         observadores.remove(observer);
     }
     
     public void notification() {
-        for (Observer observer : observadores) {
-//            observer.update(, );
+        for (int i = 0; i < observadores.size(); i++) {
+            observadores.get(i).update(observable, i);
         }
     }
 }
