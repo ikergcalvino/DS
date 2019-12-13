@@ -84,7 +84,7 @@ public class MercadoAccionesTest {
         a.setSimbolo("xdxd");
         a.setVolumen(4);
         
-        
+        d.update(a, a);
         
     }
 }
