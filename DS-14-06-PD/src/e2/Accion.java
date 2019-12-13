@@ -1,5 +1,7 @@
 package e2;
 
+import java.util.*;
+
 public class Accion {
     
     private String simbolo;
