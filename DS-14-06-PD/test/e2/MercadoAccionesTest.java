@@ -11,7 +11,7 @@ public class MercadoAccionesTest {
 
     Accion a, b;
 
-    Cliente c, j;
+    Cliente c, d;
     
     Object obj;
     
@@ -26,7 +26,7 @@ public class MercadoAccionesTest {
         b = new Accion("xdxd", 1, 2, 3, 4);
 
         c = new Cliente("Paquito");
-        j = new Cliente("Jeremias");
+        d = new Cliente("Jeremias");
 
     }
 
@@ -46,7 +46,7 @@ public class MercadoAccionesTest {
         assertEquals(a.getSimbolo(), b.getSimbolo());
         assertTrue(a.getVolumen() == b.getVolumen());
         assertEquals("Paquito", c.getName());
-        assertEquals("Jeremias", j.getName());
+        assertEquals("Jeremias", d.getName());
     }
 
     @Test
@@ -60,9 +60,9 @@ public class MercadoAccionesTest {
 
         mercado.insertCliente(c);
         mercado.insertCliente(c);
-        mercado.insertCliente(j);
+        mercado.insertCliente(d);
         
-        mercado.deleteCliente(j);
+        mercado.deleteCliente(d);
         
         mercado.insertObserver(o);
         mercado.insertObserver(o);
@@ -77,6 +77,14 @@ public class MercadoAccionesTest {
         a.setSimbolo("BBBB");
         mercado.notification();
         assertEquals("BBBB", a.getSimbolo());
+        
+        a.setCierre(1);
+        a.setMax(2);
+        a.setMin(3);
+        a.setSimbolo("xdxd");
+        a.setVolumen(4);
+        
+        
         
     }
 }
