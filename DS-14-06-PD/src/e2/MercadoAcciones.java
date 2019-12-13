@@ -44,4 +44,5 @@ public class MercadoAcciones extends Observable {
             observadores.get(i).update(observable, bolsa.get(i));
         }
     }
+
 }
