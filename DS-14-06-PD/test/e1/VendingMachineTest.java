@@ -2,6 +2,7 @@ package e1;
 
 
 import java.util.*;
+import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -17,6 +18,7 @@ public class VendingMachineTest {
     
     VendingMachine maquina;
     
+    @Before
     public void setUp() {
         
         maquina = new VendingMachine();
