@@ -16,8 +16,8 @@ import java.util.*;
 <span class="fc" id="L16">    }</span>
 
     public void deleteAccion(Accion accion) {
-<span class="nc" id="L19">        bolsa.remove(accion);</span>
-<span class="nc" id="L20">    }</span>
+<span class="fc" id="L19">        bolsa.remove(accion);</span>
+<span class="fc" id="L20">    }</span>
 
     public void insertCliente(Cliente cliente) {
 <span class="fc bfc" id="L23" title="All 2 branches covered.">        if (!clientes.contains(cliente)) {</span>
@@ -26,8 +26,8 @@ import java.util.*;
 <span class="fc" id="L26">    }</span>
 
     public void deleteCliente(Cliente cliente) {
-<span class="nc" id="L29">        clientes.remove(cliente);</span>
-<span class="nc" id="L30">    }</span>
+<span class="fc" id="L29">        clientes.remove(cliente);</span>
+<span class="fc" id="L30">    }</span>
 
     public void insertObserver(Observer observer) {
 <span class="fc bfc" id="L33" title="All 2 branches covered.">        if (!observadores.contains(observer)) {</span>
@@ -37,8 +37,8 @@ import java.util.*;
 
     @Override
     public void deleteObserver(Observer observer) {
-<span class="nc" id="L40">        observadores.remove(observer);</span>
-<span class="nc" id="L41">    }</span>
+<span class="fc" id="L40">        observadores.remove(observer);</span>
+<span class="fc" id="L41">    }</span>
 
     public void notification() {
 <span class="pc bpc" id="L44" title="1 of 2 branches missed.">        for (int i = 0; i &lt; observadores.size(); i++) {</span>
