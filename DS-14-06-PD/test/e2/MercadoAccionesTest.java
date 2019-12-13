@@ -13,6 +13,8 @@ public class MercadoAccionesTest {
 
     Cliente c, j;
     
+    Object obj;
+    
     Observer o;
 
     @Before
@@ -48,18 +50,33 @@ public class MercadoAccionesTest {
     }
 
     @Test
-    public void testInserts() {
+    public void testInserts_Deletes() {
         
         mercado.insertAccion(a);
         mercado.insertAccion(b);
         mercado.insertAccion(b);
+        
+        mercado.deleteAccion(a);
 
         mercado.insertCliente(c);
         mercado.insertCliente(c);
         mercado.insertCliente(j);
         
+        mercado.deleteCliente(j);
+        
         mercado.insertObserver(o);
         mercado.insertObserver(o);
+        
+        mercado.deleteObserver(o);
 
+    }
+    
+    @Test
+    public void testNotification() {
+        
+        a.setSimbolo("BBBB");
+        mercado.notification();
+        assertEquals("BBBB", a.getSimbolo());
+        
     }
 }
