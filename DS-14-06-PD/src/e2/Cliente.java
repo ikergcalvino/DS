@@ -6,7 +6,7 @@ public class Cliente implements Observer {
     
     private final String name;
     
-    public Cliente(String name) {
+    public Cliente (String name) {
         this.name = name;
     }
     
@@ -15,7 +15,7 @@ public class Cliente implements Observer {
     }
 
     @Override
-    public void update(Observable o, Object arg) {
+    public void update (Observable o, Object obj) {
 //        this.
     }
     

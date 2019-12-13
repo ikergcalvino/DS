@@ -10,7 +10,7 @@ public class Accion {
     private float min;
     private float volumen;
     
-    public Accion(String simbolo, float cierre, float max, float min, float volumen) {
+    public Accion (String simbolo, float cierre, float max, float min, float volumen) {
         this.simbolo = simbolo;
         this.cierre = cierre;
         this.max = max;
@@ -38,23 +38,23 @@ public class Accion {
         return volumen;
     }
     
-    public void setSimbolo(String simbolo) {
+    public void setSimbolo (String simbolo) {
         this.simbolo = simbolo;
     }
     
-    public void setCierre(float cierre) {
+    public void setCierre (float cierre) {
         this.cierre = cierre;
     }
     
-    public void setMax(float max) {
+    public void setMax (float max) {
         this.max = max;
     }
     
-    public void setMin(float min) {
+    public void setMin (float min) {
         this.min = min;
     }
     
-    public void setVolumen(float volumen) {
+    public void setVolumen (float volumen) {
         this.volumen = volumen;
     }
     
