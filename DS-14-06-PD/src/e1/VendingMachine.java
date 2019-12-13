@@ -149,9 +149,4 @@ public class VendingMachine { // implements Comparable
         return monedas;
     }
     
-//    @Override
-//    public int compareTo(Object o) {
-//        
-//    }
-    
 }
