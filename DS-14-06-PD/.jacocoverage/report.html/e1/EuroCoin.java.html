@@ -4,44 +4,54 @@ import java.util.*;
 
 public class EuroCoin {
 
+<span class="pc" id="L7">    public enum Valor {</span>
+<span class="fc" id="L8">        C1(1), C2(2), C5(5),</span>
+<span class="fc" id="L9">        C10(10), C20(20), C50(50),</span>
+<span class="fc" id="L10">        E1(100), E2(200);</span>
+
+        private final int v;
+
+<span class="fc" id="L14">        Valor(int value) {</span>
+<span class="fc" id="L15">            this.v = value;</span>
+<span class="fc" id="L16">        }</span>
+
+        public int getValor() {
+<span class="fc" id="L19">            return v;</span>
+        }
+    }
+    
     private final Valor valor;
     
-<span class="fc" id="L9">    public EuroCoin (Valor value) {</span>
-<span class="fc" id="L10">        this.valor = value;</span>
-<span class="fc" id="L11">    }	            </span>
+<span class="fc" id="L25">    public EuroCoin (Valor value) {</span>
+<span class="fc" id="L26">        this.valor = value;</span>
+<span class="fc" id="L27">    }	            </span>
 	
-<span class="fc" id="L13">    public Valor getValue() { return valor; }</span>
-        
-<span class="pc" id="L15">	public enum Valor {</span>
-<span class="fc" id="L16">		C1(1),   C2(2),   C5(5),</span>
-<span class="fc" id="L17">                C10(10), C20(20), C50(50),</span>
-<span class="fc" id="L18">                E1(100), E2(200);</span>
+<span class="fc" id="L29">    public Valor getValue() { return valor; }</span>
+    
+    @Override
+    public int hashCode() {
+<span class="fc" id="L33">        int hash = 7;</span>
+<span class="fc" id="L34">        hash = 53 * hash + Objects.hashCode(this.valor);</span>
+<span class="fc" id="L35">        return hash;</span>
+    }
 
-		private final int v;
-                
-<span class="fc" id="L22">		Valor (int value) { this.v = value; }</span>
-                
-<span class="fc" id="L24">		public int getValor() {	return v; }</span>
-	}
+    @Override
+    public boolean equals(Object obj) {
+<span class="fc bfc" id="L40" title="All 2 branches covered.">        if (this == obj) {</span>
+<span class="fc" id="L41">            return true;</span>
+        }
 
-	@Override
-	public int hashCode() {
-<span class="fc" id="L29">            int hash = 7;</span>
-<span class="fc" id="L30">            hash = 53 * hash + Objects.hashCode(this.valor);</span>
-<span class="fc" id="L31">            return hash;</span>
-	}
+<span class="fc bfc" id="L44" title="All 2 branches covered.">        if (obj == null) {</span>
+<span class="fc" id="L45">            return false;</span>
+        }
 
-	@Override
-	public boolean equals (Object obj) {
-<span class="fc bfc" id="L36" title="All 2 branches covered.">            if (this == obj) { return true; }</span>
-            
-<span class="fc bfc" id="L38" title="All 2 branches covered.">            if (obj == null) { return false; }</span>
-            
-<span class="fc bfc" id="L40" title="All 2 branches covered.">            if (getClass() != obj.getClass()) { return false; }</span>
-            
-<span class="fc" id="L42">            final EuroCoin other = (EuroCoin) obj;</span>
-            
-<span class="pc bpc" id="L44" title="1 of 2 branches missed.">            return this.valor == other.valor;</span>
-	}
+<span class="fc bfc" id="L48" title="All 2 branches covered.">        if (getClass() != obj.getClass()) {</span>
+<span class="fc" id="L49">            return false;</span>
+        }
+
+<span class="fc" id="L52">        final EuroCoin other = (EuroCoin) obj;</span>
+
+<span class="pc bpc" id="L54" title="1 of 2 branches missed.">        return this.valor == other.valor;</span>
+    }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span></div></body></html>
