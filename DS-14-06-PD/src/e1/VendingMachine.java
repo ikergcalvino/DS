@@ -2,7 +2,7 @@ package e1;
 
 import java.util.*;
 
-public class VendingMachine { // implements Comparable
+public class VendingMachine {
 
     private final List<EuroCoin> deposito = new ArrayList<>(); // Todas las monedas de la máquina
     private final List<Producto> productos = new ArrayList<>(); // Productos de la máquina
