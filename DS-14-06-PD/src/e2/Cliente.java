@@ -4,6 +4,7 @@ import java.util.*;
 
 public class Cliente implements Observer {
     
+    private Accion accion;
     private final String name;
     
     public Cliente (String name) {
@@ -16,7 +17,11 @@ public class Cliente implements Observer {
 
     @Override
     public void update (Observable o, Object obj) {
-//        this.
+        this.accion.getSimbolo();
+        this.accion.getCierre();
+        this.accion.getMax();
+        this.accion.getMin();
+        this.accion.getVolumen();
     }
     
 }
