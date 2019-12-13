@@ -19,15 +19,17 @@ public class EuroCoin {
             return v;
         }
     }
-    
+
     private final Valor valor;
-    
-    public EuroCoin (Valor value) {
+
+    public EuroCoin(Valor value) {
         this.valor = value;
-    }	            
-	
-    public Valor getValue() { return valor; }
-    
+    }
+
+    public Valor getValue() {
+        return valor;
+    }
+
     @Override
     public int hashCode() {
         int hash = 7;

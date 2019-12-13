@@ -16,5 +16,5 @@ public class CambioSimple extends VendingMachine implements Cambio {
         }
         return cambio;
     }
-    
+
 }
