@@ -7,7 +7,7 @@ public class MercadoAcciones extends Observable {
     private Observable observable;
     private final List<Accion> bolsa = new ArrayList<>(); // Lista de acciones
     private final List<Cliente> clientes = new ArrayList<>(); // Lista de clientes
-    private final List<Observer> observadores = new ArrayList<>(); //Lista de observadores
+    private final List<Observer> observadores = new ArrayList<>(); // Lista de observadores
 
     public void insertAccion(Accion accion) {
         if (!bolsa.contains(accion)) {
