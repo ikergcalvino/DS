@@ -12,6 +12,8 @@ public class MercadoAccionesTest {
     Accion a, b;
 
     Cliente c, j;
+    
+    Observer o;
 
     @Before
     public void setUp() {
@@ -45,4 +47,19 @@ public class MercadoAccionesTest {
         assertEquals("Jeremias", j.getName());
     }
 
+    @Test
+    public void testInserts() {
+        
+        mercado.insertAccion(a);
+        mercado.insertAccion(b);
+        mercado.insertAccion(b);
+
+        mercado.insertCliente(c);
+        mercado.insertCliente(c);
+        mercado.insertCliente(j);
+        
+        mercado.insertObserver(o);
+        mercado.insertObserver(o);
+
+    }
 }

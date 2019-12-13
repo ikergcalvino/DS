@@ -3,26 +3,26 @@
 import java.util.*;
 
 public class Cliente implements Observer {
-    
+
     private Accion accion;
     private final String name;
-    
-<span class="nc" id="L10">    public Cliente (String name) {</span>
-<span class="nc" id="L11">        this.name = name;</span>
-<span class="nc" id="L12">    }</span>
-    
+
+<span class="fc" id="L10">    public Cliente(String name) {</span>
+<span class="fc" id="L11">        this.name = name;</span>
+<span class="fc" id="L12">    }</span>
+
     public String getName() {
-<span class="nc" id="L15">        return name;</span>
+<span class="fc" id="L15">        return name;</span>
     }
 
     @Override
-    public void update (Observable o, Object obj) {
+    public void update(Observable o, Object obj) {
 <span class="nc" id="L20">        this.accion.getSimbolo();</span>
 <span class="nc" id="L21">        this.accion.getCierre();</span>
 <span class="nc" id="L22">        this.accion.getMax();</span>
 <span class="nc" id="L23">        this.accion.getMin();</span>
 <span class="nc" id="L24">        this.accion.getVolumen();</span>
 <span class="nc" id="L25">    }</span>
-    
+
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span></div></body></html>
