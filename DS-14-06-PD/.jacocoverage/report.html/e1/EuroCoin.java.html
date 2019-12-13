@@ -6,42 +6,42 @@ public class EuroCoin {
 
     private final Valor valor;
     
-<span class="nc" id="L9">    public EuroCoin (Valor value) {</span>
-<span class="nc" id="L10">        this.valor = value;</span>
-<span class="nc" id="L11">    }	            </span>
+<span class="fc" id="L9">    public EuroCoin (Valor value) {</span>
+<span class="fc" id="L10">        this.valor = value;</span>
+<span class="fc" id="L11">    }	            </span>
 	
-<span class="nc" id="L13">    public Valor getValue() { return valor; }</span>
+<span class="fc" id="L13">    public Valor getValue() { return valor; }</span>
         
-<span class="nc" id="L15">	public enum Valor {</span>
-<span class="nc" id="L16">		C1(1),   C2(2),   C5(5),</span>
-<span class="nc" id="L17">                C10(10), C20(20), C50(50),</span>
-<span class="nc" id="L18">                E1(100), E2(200);</span>
+<span class="pc" id="L15">	public enum Valor {</span>
+<span class="fc" id="L16">		C1(1),   C2(2),   C5(5),</span>
+<span class="fc" id="L17">                C10(10), C20(20), C50(50),</span>
+<span class="fc" id="L18">                E1(100), E2(200);</span>
 
 		private final int v;
                 
-<span class="nc" id="L22">		Valor (int value) { this.v = value; }</span>
+<span class="fc" id="L22">		Valor (int value) { this.v = value; }</span>
                 
-<span class="nc" id="L24">		public int getValor() {	return v; }</span>
+<span class="fc" id="L24">		public int getValor() {	return v; }</span>
 	}
 
 	@Override
 	public int hashCode() {
-<span class="nc" id="L29">            int hash = 7;</span>
-<span class="nc" id="L30">            hash = 53 * hash + Objects.hashCode(this.valor);</span>
-<span class="nc" id="L31">            return hash;</span>
+<span class="fc" id="L29">            int hash = 7;</span>
+<span class="fc" id="L30">            hash = 53 * hash + Objects.hashCode(this.valor);</span>
+<span class="fc" id="L31">            return hash;</span>
 	}
 
 	@Override
 	public boolean equals (Object obj) {
-<span class="nc bnc" id="L36" title="All 2 branches missed.">            if (this == obj) { return true; }</span>
+<span class="fc bfc" id="L36" title="All 2 branches covered.">            if (this == obj) { return true; }</span>
             
-<span class="nc bnc" id="L38" title="All 2 branches missed.">            if (obj == null) { return false; }</span>
+<span class="fc bfc" id="L38" title="All 2 branches covered.">            if (obj == null) { return false; }</span>
             
-<span class="nc bnc" id="L40" title="All 2 branches missed.">            if (getClass() != obj.getClass()) { return false; }</span>
+<span class="pc bpc" id="L40" title="1 of 2 branches missed.">            if (getClass() != obj.getClass()) { return false; }</span>
             
-<span class="nc" id="L42">            final EuroCoin other = (EuroCoin) obj;</span>
+<span class="fc" id="L42">            final EuroCoin other = (EuroCoin) obj;</span>
             
-<span class="nc bnc" id="L44" title="All 2 branches missed.">            return this.valor == other.valor;</span>
+<span class="pc bpc" id="L44" title="1 of 2 branches missed.">            return this.valor == other.valor;</span>
 	}
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span></div></body></html>
