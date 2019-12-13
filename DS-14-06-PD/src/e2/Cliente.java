@@ -16,7 +16,7 @@ public class Cliente implements Observer {
 
     @Override
     public void update(Observable o, Object arg) {
-        this.
+//        this.
     }
     
 }
