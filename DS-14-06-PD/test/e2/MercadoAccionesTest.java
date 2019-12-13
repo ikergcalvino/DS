@@ -11,9 +11,9 @@ public class MercadoAccionesTest {
     Accion a, b;
 
     Cliente c, d;
-    
+
     Object obj;
-    
+
     Observer o;
 
     @Before
@@ -50,40 +50,41 @@ public class MercadoAccionesTest {
 
     @Test
     public void testInserts_Deletes() {
-        
+
         mercado.insertAccion(a);
         mercado.insertAccion(b);
         mercado.insertAccion(b);
-        
+
         mercado.deleteAccion(a);
 
         mercado.insertCliente(c);
         mercado.insertCliente(c);
         mercado.insertCliente(d);
-        
+
         mercado.deleteCliente(d);
-        
+
         mercado.insertObserver(o);
         mercado.insertObserver(o);
-        
+
         mercado.deleteObserver(o);
 
     }
-    
+
     @Test
     public void testNotification() {
-        
+
         a.setSimbolo("BBBB");
         mercado.notification();
         assertEquals("BBBB", a.getSimbolo());
-        
+
         a.setCierre(1);
         a.setMax(2);
         a.setMin(3);
         a.setSimbolo("xdxd");
         a.setVolumen(4);
-        
+
         d.update(a, a);
-        
+
     }
+
 }
